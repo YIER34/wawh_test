@@ -178,9 +178,9 @@
         
     <div class='page-header'>
         <h1>测试报告</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2020-08-14 09:15:05</p>
-<p class='attribute'><strong>运行时长:</strong> 0:03:25.390663</p>
-<p class='attribute'><strong>状态:</strong> 通过 3</p>
+    <p class='attribute'><strong>开始时间:</strong> 2020-09-09 09:30:05</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:54.399696</p>
+<p class='attribute'><strong>状态:</strong> 错误 3</p>
 
     </div>
     <div style="float: left;width:50%;"><p class='description'>这是第一次测试报告</p></div>
@@ -211,24 +211,89 @@
             <td>查看</td>
         </tr>
         
-    <tr class='passClass'>
+    <tr class='errorClass'>
         <td>test_01_login_org.Test_login</td>
         <td>1</td>
+        <td>0</td>
+        <td>0</td>
         <td>1</td>
-        <td>0</td>
-        <td>0</td>
         <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
     </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_01_login_org</div></td>
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_01_login_org</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
-        通过</a>
-    <div id='div_pt1.1' class="popup_window">
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        错误</a>
+    <div id='div_ft1.1' class="popup_window">
         <pre>
-        pt1.1: 登录成功
+        ft1.1: Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001CF9F4EA0F0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\newpro\testpro\wawh_test\case\test_01_login_org.py", line 22, in setUp
+    self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\appium\webdriver\webdriver.py", line 155, in __init__
+    proxy
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\appium\webdriver\webdriver.py", line 225, in start_session
+    response = self.execute(RemoteCommand.NEW_SESSION, parameters)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 319, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 374, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 397, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\request.py", line 80, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\request.py", line 171, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\poolmanager.py", line 330, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 760, in urlopen
+    **response_kw
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 760, in urlopen
+    **response_kw
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 760, in urlopen
+    **response_kw
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001CF9F4EA0F0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
 
         </pre>
     </div>
@@ -236,24 +301,89 @@
     </td>
 </tr>
 
-    <tr class='passClass'>
+    <tr class='errorClass'>
         <td>test_04_add_address.Test_Add_Address</td>
         <td>1</td>
+        <td>0</td>
+        <td>0</td>
         <td>1</td>
-        <td>0</td>
-        <td>0</td>
         <td><a href="javascript:showClassDetail('c2',1)">详情</a></td>
     </tr>
 
-<tr id='pt2.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_add_address</div></td>
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_add_address</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
-        通过</a>
-    <div id='div_pt2.1' class="popup_window">
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        错误</a>
+    <div id='div_ft2.1' class="popup_window">
         <pre>
-        pt2.1: 新增地址成功
+        ft2.1: Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001CF9F5EB780&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\newpro\testpro\wawh_test\case\test_04_add_address.py", line 23, in setUp
+    self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\appium\webdriver\webdriver.py", line 155, in __init__
+    proxy
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\appium\webdriver\webdriver.py", line 225, in start_session
+    response = self.execute(RemoteCommand.NEW_SESSION, parameters)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 319, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 374, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 397, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\request.py", line 80, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\request.py", line 171, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\poolmanager.py", line 330, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 760, in urlopen
+    **response_kw
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 760, in urlopen
+    **response_kw
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 760, in urlopen
+    **response_kw
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001CF9F5EB780&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
 
         </pre>
     </div>
@@ -261,24 +391,89 @@
     </td>
 </tr>
 
-    <tr class='passClass'>
+    <tr class='errorClass'>
         <td>test_06_logout_org.Test_Logout</td>
         <td>1</td>
+        <td>0</td>
+        <td>0</td>
         <td>1</td>
-        <td>0</td>
-        <td>0</td>
         <td><a href="javascript:showClassDetail('c3',1)">详情</a></td>
     </tr>
 
-<tr id='pt3.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_logout</div></td>
+<tr id='ft3.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_logout</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
-        通过</a>
-    <div id='div_pt3.1' class="popup_window">
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        错误</a>
+    <div id='div_ft3.1' class="popup_window">
         <pre>
-        pt3.1: 退出登录成功
+        ft3.1: Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 157, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 672, in urlopen
+    chunked=chunked,
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 184, in connect
+    conn = self._new_conn()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001CF9F4AC780&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\newpro\testpro\wawh_test\case\test_06_logout_org.py", line 20, in setUp
+    self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\appium\webdriver\webdriver.py", line 155, in __init__
+    proxy
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\appium\webdriver\webdriver.py", line 225, in start_session
+    response = self.execute(RemoteCommand.NEW_SESSION, parameters)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 319, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 374, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 397, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\request.py", line 80, in request
+    method, url, fields=fields, headers=headers, **urlopen_kw
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\request.py", line 171, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\poolmanager.py", line 330, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 760, in urlopen
+    **response_kw
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 760, in urlopen
+    **response_kw
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 760, in urlopen
+    **response_kw
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 720, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 436, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001CF9F4AC780&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
 
         </pre>
     </div>
@@ -289,9 +484,9 @@
         <tr id='total_row'>
             <td>总计</td>
             <td>3</td>
+            <td>0</td>
+            <td>0</td>
             <td>3</td>
-            <td>0</td>
-            <td>0</td>
             <td>&nbsp;</td>
         </tr>
     </table>
@@ -324,9 +519,9 @@
                     radius : '60%',
                     center: ['50%', '60%'],
                     data:[
-                        {value:3, name:'通过'},
+                        {value:0, name:'通过'},
                         {value:0, name:'失败'},
-                        {value:0, name:'错误'}
+                        {value:3, name:'错误'}
                     ],
                     itemStyle: {
                         emphasis: {
